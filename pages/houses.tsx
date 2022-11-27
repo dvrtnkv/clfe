@@ -7,14 +7,14 @@ import Header from "../components/header";
 import Nav from "../components/nav";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Houses() {
 	return (
 		<div className={styles.container}>
 			<Head>
 				<meta charSet="utf-8" />
-				<title>Collars Lab.</title>
-				<meta name="description" content="Веб-исследования и код" />
-				<link rel="canonical" href="https://collarslab.com/" />
+				<title>Houses | Collars Lab.</title>
+				<meta name="description" content="Запросить жильё в аренду по параметрам" />
+				<link rel="canonical" href="https://collarslab.com/houses" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />

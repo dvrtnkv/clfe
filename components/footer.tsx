@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
-export default function Footer({styles}) {
+export default function Footer() {
 	const dateY = new Date().getFullYear();
 	return (
 		<footer className={styles.footer}>
