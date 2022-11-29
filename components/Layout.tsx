@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Nav from "../components/Nav";
-import Header from "components/Header";
-import Footer from "../components/Footer";
+import Footer from "./Footer";
+import Header from "./Header";
+import Nav from "./Nav";
 
 import styles from "../styles/Home.module.css";
 
@@ -18,7 +18,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			
+
 			<main className={styles.main}>
 				<Header />
 				<Nav />
