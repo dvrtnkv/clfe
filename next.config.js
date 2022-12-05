@@ -9,14 +9,13 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
-		formats: ["image/avif", "image/webp"],
-		domains: ["tailwindui.com", "collarslab.com"],
 		dangerouslyAllowSVG: true,
-		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+		domains: ["collarslab.com"],
 	},
 	generateBuildId: () => nextBuildId({dir: __dirname}),
 	productionBrowserSourceMaps: true,
 	webpack(config, {isServer}) {
+		historyApiFallback: true;
 		if (!isServer) {
 			// don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
 			config.resolve.fallback = {
