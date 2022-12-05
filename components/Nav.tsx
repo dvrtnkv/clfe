@@ -30,7 +30,7 @@ export default function Nav() {
 				<Link
 					href={path}
 					key={path}
-					className={`hover:underline ${
+					className={`text-xl hover:underline hover:bg-gray-100 rounded p-2 px-4 h-12 ${
 						router.pathname === path ? "text-blue-500" : "hover:text-blue-500"
 					}`}>
 					{title}
