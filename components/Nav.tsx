@@ -1,13 +1,38 @@
 import Link from "next/link";
-
+import {useRouter} from "next/router";
+const navList = [
+	{
+		title: "Collars Lab.",
+		path: "/",
+	},
+	{
+		title: "Блог",
+		path: "/posts",
+	},
+	{
+		title: "Магазин",
+		path: "/shop",
+	},
+	{
+		title: "Услуги",
+		path: "/service",
+	},
+	{
+		title: "Портал",
+		path: "/portal",
+	},
+];
 export default function Nav() {
+	const router = useRouter();
 	return (
-		<nav className="flex flex-col sm:justify-center pt-4">
-			{[["Дома", "/houses"]].map(([title, url]) => (
+		<nav className="nav flex flex-col p-8 lg:border-r">
+			{navList.map(({title, path}) => (
 				<Link
-					href={url}
-					key={url}
-					className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">
+					href={path}
+					key={path}
+					className={`hover:underline ${
+						router.pathname === path ? "text-blue-500" : "hover:text-blue-500"
+					}`}>
 					{title}
 				</Link>
 			))}

@@ -1,3 +1,42 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer utilities {
+	.main-template {
+		grid-template:
+			"h h h" auto
+			"n pc ." 1fr
+			"f f f" auto / 300px minmax(300px, 800px) 1fr;
+	}
+	.mobile-template {
+		grid-template:
+			"h" auto
+			"n" auto
+			"pc" 1fr
+			"f" auto / 1fr;
+	}
+	.header {
+		grid-area: h;
+	}
+	.nav {
+		grid-area: n;
+	}
+	.page-header {
+		font-size: 2rem;
+		line-height: 2.25rem;
+		margin-bottom: 1rem;
+	}
+	.page-content {
+		grid-area: pc;
+	}
+	.footer {
+		grid-area: f;
+		align-items: center;
+	}
+	.text {
+		word-wrap: break-word;
+		white-space: pre-wrap;
+		word-break: break-word;
+	}
+}

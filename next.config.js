@@ -9,17 +9,20 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	images: {
-		domains: ["tailwindui.com"],
+		formats: ["image/avif", "image/webp"],
+		domains: ["tailwindui.com", "collarslab.com"],
 		dangerouslyAllowSVG: true,
 		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 	},
 	generateBuildId: () => nextBuildId({dir: __dirname}),
 	productionBrowserSourceMaps: true,
-	images: {
-		formats: ["image/avif", "image/webp"],
-		domains: ["collarslab.com"],
-	},
-	webpack(config) {
+	webpack(config, {isServer}) {
+		if (!isServer) {
+			// don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+			config.resolve.fallback = {
+				fs: false,
+			};
+		}
 		config.module.rules.push({
 			test: /\.svg$/,
 			use: ["@svgr/webpack"],
