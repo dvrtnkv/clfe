@@ -2,8 +2,8 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 const navList = [
 	{
-		title: "Collars Lab.",
-		path: "/",
+		title: "Услуги",
+		path: "/service",
 	},
 	{
 		title: "Блог",
@@ -14,10 +14,6 @@ const navList = [
 		path: "/shop",
 	},
 	{
-		title: "Услуги",
-		path: "/service",
-	},
-	{
 		title: "Портал",
 		path: "/portal",
 	},
@@ -25,13 +21,13 @@ const navList = [
 export default function Nav() {
 	const router = useRouter();
 	return (
-		<nav className="nav flex flex-col p-8 lg:border-r">
+		<nav className="nav bg-gray-100 w-64 hidden lg:flex lg:flex-col lg:border-r">
 			{navList.map(({title, path}) => (
 				<Link
 					href={path}
 					key={path}
-					className={`text-xl hover:underline hover:bg-gray-100 rounded p-2 px-4 h-12 ${
-						router.pathname === path ? "text-blue-500" : "hover:text-blue-500"
+					className={`text-lg border-b hover:underline rounded p-2 px-4 h-12 ${
+						router.pathname === path ? "font-bold" : "hover:text-gray-900"
 					}`}>
 					{title}
 				</Link>

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
 
@@ -20,8 +19,7 @@ export default function Layout({children}: {children: React.ReactNode}) {
 				</Head>
 				<Header />
 				<Nav />
-				<section className="page-content container px-8 pt-4">{children}</section>
-				<Footer />
+				<section className="page-content container px-8 pt-4 max-w-3xl mx-auto">{children}</section>
 			</main>
 		</>
 	);

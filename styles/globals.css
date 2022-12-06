@@ -5,19 +5,32 @@
 @layer utilities {
 	.main-template {
 		grid-template:
-			"h h h" auto
-			"n pc ." 1fr
-			"f f f" auto / 300px minmax(300px, 800px) 1fr;
+			"h h" auto
+			"n pc" 1fr / max-content 1fr;
 	}
 	.mobile-template {
 		grid-template:
 			"h" auto
 			"n" auto
-			"pc" 1fr
-			"f" auto / 1fr;
+			"pc" 1fr / 1fr;
 	}
 	.header {
 		grid-area: h;
+		align-items: center;
+	}
+	.header-title {
+		background-image: linear-gradient(
+			to right,
+			#462523 0,
+			#cb9b51 22%,
+			#f6e27a 45%,
+			#f6f2c0 50%,
+			#f6e27a 55%,
+			#cb9b51 78%,
+			#462523 100%
+		);
+		color: transparent;
+		background-clip: text;
 	}
 	.nav {
 		grid-area: n;
@@ -29,10 +42,6 @@
 	}
 	.page-content {
 		grid-area: pc;
-	}
-	.footer {
-		grid-area: f;
-		align-items: center;
 	}
 	.text {
 		word-wrap: break-word;

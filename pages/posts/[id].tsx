@@ -25,8 +25,8 @@ export default function Post({data}: Data) {
 					{title: data.title, path: router.query.id},
 				]}
 			/>
-			<article className="prose-lg">
-				<h1>{data.title}</h1>
+			<article className="prose lg:prose-xl">
+				<h1 className="border-b pb-4">{data.title}</h1>
 				<p>{data.body}</p>
 			</article>
 		</Layout>
@@ -43,12 +43,3 @@ export const getServerSideProps: GetServerSideProps<{data: Data}> = async (conte
 		},
 	};
 };
-// export const getStaticProps: GetStaticProps = async (context) => {
-// 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context?.params?.id}`);
-// 	const data: Data = await res.json();
-// 	return {
-// 		props: {
-// 			data,
-// 		},
-// 	};
-// };

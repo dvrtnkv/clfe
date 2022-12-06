@@ -17,12 +17,14 @@ export default function Posts({data}: any) {
 			{data.map(
 				({userId, id, title, body}: {userId: number; id: number; title: string; body: string}) => {
 					return (
-						<article className="prose-lg" key={id}>
-							<Link href={"/posts/" + id} className="mt-8">
-								<h1 className="underline text-2xl">{title}</h1>
-								<p>{body}</p>
-								<span>Author: {userId}</span>
+						<article className="prose lg:prose-md" key={id}>
+							<Link
+								href={"/posts/" + id}
+								className="no-underline hover:underline hover:text-blue-400 mt-8">
+								<h1 className="hover:text-blue-400">{title}</h1>
 							</Link>
+							<p>{body}</p>
+							<span>Author: {userId}</span>
 						</article>
 					);
 				}

@@ -13,8 +13,8 @@ export default function Home() {
 			</Head>
 			<Breadcrumbs list={[{title: "Главная", path: "/"}]} />
 			<article className="prose-lg">
-				<h1>Главная страница</h1>
-				<p>Я делаю сайты и ищу работу в офисе г. Екатеринбург</p>
+				<h1 className="page-header">Главная страница</h1>
+				<p>Пишу код и ищу работу в офисе г. Екатеринбург</p>
 			</article>
 		</Layout>
 	);
