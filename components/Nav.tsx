@@ -20,14 +20,15 @@ const navList = [
 ];
 export default function Nav() {
 	const router = useRouter();
+
 	return (
-		<nav className="nav bg-gray-100 w-64 hidden lg:flex lg:flex-col lg:border-r">
+		<nav className="nav bg-gray-100 w-56 hidden lg:flex lg:flex-col lg:border-r">
 			{navList.map(({title, path}) => (
 				<Link
 					href={path}
 					key={path}
-					className={`text-lg border-b hover:underline rounded p-2 px-4 h-12 ${
-						router.pathname === path ? "font-bold" : "hover:text-gray-900"
+					className={`text-lg border-b hover:underline p-2 px-4 max-h-fit ${
+						router.pathname.indexOf(path) === 0 ? "font-bold" : "hover:text-gray-600"
 					}`}>
 					{title}
 				</Link>

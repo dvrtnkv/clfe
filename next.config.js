@@ -14,7 +14,13 @@ const nextConfig = {
 	},
 	generateBuildId: () => nextBuildId({dir: __dirname}),
 	productionBrowserSourceMaps: true,
-	webpack(config, {isServer}) {
+	webpack(config, {isServer, webpack}) {
+		// config.plugins = [
+		// 	...config.plugins,
+		// 	new webpack.DefinePlugin({
+		// 		__REACT_DEVTOOLS_GLOBAL_HOOK__: "({ isDisabled: true })",
+		// 	}),
+		// ];
 		historyApiFallback: true;
 		if (!isServer) {
 			// don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'

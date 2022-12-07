@@ -12,7 +12,6 @@ export default function Posts({data}: any) {
 				<meta name="description" content="Блог про веб-исследования и код" />
 				<link rel="canonical" href="https://collarslab.com/posts" />
 			</Head>
-			<Breadcrumbs list={[{title: "Блог", path: "/posts"}]} />
 			<h1 className="page-header">Блог про веб-исследования и код</h1>
 			{data.map(
 				({userId, id, title, body}: {userId: number; id: number; title: string; body: string}) => {

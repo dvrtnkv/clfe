@@ -17,6 +17,7 @@
 	.header {
 		grid-area: h;
 		align-items: center;
+		position: sticky;
 	}
 	.header-title {
 		background-image: linear-gradient(
@@ -34,6 +35,7 @@
 	}
 	.nav {
 		grid-area: n;
+		position: sticky;
 	}
 	.page-header {
 		font-size: 2rem;
